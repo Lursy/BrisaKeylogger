@@ -1,5 +1,5 @@
 <div align="center">
-  <h1><strong>BrisaKeylogger</strong></h1>
+  <img src="titulo.png">
 </div>
 <h2>Disclaimer</h2>
 <p align="center">
