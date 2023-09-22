@@ -1,11 +1,8 @@
 #include <iostream>
-#include <Windows.h>
-#include <shobjidl.h>
-#include <shlguid.h>
+#include <Windows.h>
 #include <bits/stdc++.h>
 #include <unistd.h>
-
-#define FILE_LOGS "System.exe"
+
 
 int main(){
 	FreeConsole();
