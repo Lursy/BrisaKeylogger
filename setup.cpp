@@ -37,7 +37,7 @@ int main(){
 	    
 	std::string comando = "mklink \"" + link + "\" \"" + file + "\"";
 	
-	int resultado = system(comando.c_str());
+	system(comando.c_str());
 	
 	return 0;
 }
