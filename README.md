@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="BrisaKL.png">
+  <img src="title.png">
 </div>
 <h2>Disclaimer</h2>
 <p align="center" width="90">
