@@ -15,7 +15,7 @@
 
 <h2>Funcionamento</h2>
 <p>
-  O arquivo `setup.cpp` contém o código para a instalação automática do Keylogger na pasta de inicialização do Windows, criando um arquivo em `.../Microsoft/Windows/system80.exe` e um atalho desse mesmo arquivo na pasta de inicialização.
+  O arquivo <code>setup.cpp</code> contém o código para a instalação automática do Keylogger na pasta de inicialização do Windows, criando um arquivo em <code>.../Microsoft/Windows/system80.exe</code> e um atalho desse mesmo arquivo na pasta de inicialização.
 
-  O arquivo `BrisaKL.cpp` é o arquivo do keylogger, que executa em segundo plano, capturando as teclas pressionadas.
+  O arquivo <code>BrisaKL.cpp</code> é o arquivo do keylogger, que executa em segundo plano, capturando as teclas pressionadas.
 </p>
