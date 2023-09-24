@@ -6,8 +6,8 @@
 
 int main(){
 	FreeConsole();
-	char name[23 + 1];
-	DWORD tamanho = 23 + 1;
+	char name[24];
+	DWORD tamanho = 24;
 	
 	GetUserName(name, &tamanho);
 	
